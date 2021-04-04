@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Job Application";
+}
+@model SC.JobPortal.UI.ViewModels.JobApplicationViewModel
+
+
+@using (Html.BeginForm("Create", "JobApplication", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.DisplayNameFor(model => model.JobApplication.Candidate.Name)
+    @Html.TextBoxFor(model => model.JobApplication.Candidate.Name)
+    @Html.DisplayNameFor(model => model.JobApplication.Candidate.Email)
+    @Html.TextBoxFor(model => model.JobApplication.Candidate.Email)
+    @Html.DisplayNameFor(model => model.JobApplication.Candidate.DateOfBirth)
+    @Html.TextBoxFor(model => model.JobApplication.Candidate.DateOfBirth, new { @type = "date" })
+    @Html.DisplayNameFor(model => model.JobApplication.Candidate.PlaceOfBirth)
+    @Html.TextBoxFor(model => model.JobApplication.Candidate.PlaceOfBirth)
+    @Html.DisplayNameFor(model => model.JobApplication.Job)
+    @Html.DropDownListFor(model => model.JobApplication.Job.Id, Model.Jobs, "Select")
+    @Html.EditorFor(model => model.JobApplication.ResumeFile, new { htmlAttributes = new { @class = "form-control", @type = "file", @name = "Resume"} })
+
+
+  
+
+    <input type="submit" name="submit" />
+}
+

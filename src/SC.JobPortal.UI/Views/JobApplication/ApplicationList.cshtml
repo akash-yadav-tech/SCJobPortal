@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Job Application List";
+}
+@model IEnumerable<SC.JobPortal.UI.Models.JobApplication>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Candidate.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Candidate.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Candidate.DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Candidate.PlaceOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Job)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Resume)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Candidate.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Candidate.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Candidate.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Candidate.PlaceOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Job.Description)
+            </td>
+            <td>
+                @if (!string.IsNullOrEmpty(item.Resume))
+                {
+                    @Html.ActionLink(item.Resume, "DownloadResume", "JobApplication", new { fileName = item.Resume })
+                }
+            </td>
+        </tr>
+    }
+</table>

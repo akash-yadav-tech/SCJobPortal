@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Lamar" Version="5.0.3" />
+    <PackageReference Include="Lamar.Microsoft.DependencyInjection" Version="5.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SC.JobPortal.Core.DomainServices\SC.JobPortal.Core.DomainServices.csproj" />
+    <ProjectReference Include="..\SC.JobPortal.Core.Models\SC.JobPortal.Core.Models.csproj" />
+    <ProjectReference Include="..\SC.JobPortal.Core\SC.JobPortal.Core.csproj" />
+    <ProjectReference Include="..\SC.JobPortal.Infrastructure.AspNetCore.Configuration\SC.JobPortal.Infrastructure.AspNetCore.Configuration.csproj" />
+    <ProjectReference Include="..\SC.JobPortal.Infrastructure.EntityFrameworkCore.Repository\SC.JobPortal.Infrastructure.EntityFrameworkCore.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Resume\" />
+  </ItemGroup>
+
+</Project>
